@@ -2,11 +2,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "framer-motion"
-import profile from '../Images/profile-1.jpeg'
+import { PageInfo } from '../../typings'
+import { urlForImage } from '../../sanity/lib/image'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-const About = ({}: Props) => {
+const About = ({pageInfo}: Props) => {
   return (
     <motion.div
     initial={{
@@ -37,17 +40,19 @@ const About = ({}: Props) => {
         viewport={{
             once: true
         }}
-        className='h-56 w-56 md:h-95 md:w-64 xl:w-[400px] xl:h-[500px]'
+        className='h-52 w-52 md:h-95 md:w-70 xl:w-[700px] xl:h-[500px]'
         >
         <Image
-            src={profile}
+            src={urlForImage(pageInfo?.profilePic.asset).url()}
             alt='profile'
-            className=' -mb-20 md:mb-0 flex-shrink-0 h-56 w-56 rounded-full object-cover md:rounded-lg md:h-95 md:w-64 xl:w-[400px] xl:h-[500px]'
+            className=' -mb-20 md:mb-0 flex-shrink-0 h-52 w-52 rounded-full object-cover md:rounded-lg md:h-95 md:w-70 xl:w-[700px] xl:h-[500px]'
+            width={1000} height={1000}
         />
       </motion.div>
-      <div className='space-y-8 px-0 md:px-10'>
-        <h4 className='text-4xl font-semibold'>Here is a little background</h4>
-        <p className='text-base'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, perspiciatis pariatur. Magni, atque repellat, quasi quo pariatur soluta nobis quae, nemo non iure neque quisquam ex autem libero? Consequuntur, nobis.</p>
+      <div className='space-y-4 md:space-y-8 px-0 md:px-10'>
+        <h4 className='text-2xl md:text-4xl font-semibold'>Here is a{" "} 
+        <span className='underline decoration-[#F7AB0A]/50'>little</span>{" "}background</h4>
+        <p className='text-sm md:text-base xl:text-lg'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   )

@@ -2,9 +2,13 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import ImgSkill from './ImgSkill'
+import { Skill } from '../../typings'
 
-type Props = {}
-const Skills = ({}: Props) => {
+
+type Props = {
+  skills: Skill[]
+}
+const Skills = ({skills}: Props) => {
   return (
     <motion.div 
     initial={{opacity:0}}
@@ -18,17 +22,17 @@ const Skills = ({}: Props) => {
       <h4 className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
         Hover over a skill for current proficiency
       </h4>
-      <div className='grid grid-cols-4 gap-5'>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
-        <ImgSkill/>
+      <div className='grid grid-cols-3 md:grid-cols-4 gap-5 pt-24 w-fit'>
+        {skills?.slice(0,skills.length/2).map((skill)=>{
+          return(
+            <ImgSkill key={skill._id} skill={skill} />
+          )
+        })}
+         {skills?.slice(skills.length/2,skills.length).map((skill)=>{
+          return(
+            <ImgSkill key={skill._id} skill={skill} directionLeft/>
+          )
+        })}
       </div>
     </motion.div>
   )

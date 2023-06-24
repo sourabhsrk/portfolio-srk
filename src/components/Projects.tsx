@@ -2,11 +2,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "framer-motion"
-import prjimg from '../Images/Newsapp.png'
+import { Project } from '../../typings'
+import { urlForImage } from '../../sanity/lib/image'
+import Link from 'next/link'
 
-type Props = {}
-const Projects = ({}:Props) => {
-    const projects= [1,2,3];
+type Props = {
+  projects: Project[]
+}
+const Projects = ({projects}:Props) => {
   return (
     <motion.div
     initial={{opacity:0}}
@@ -15,9 +18,10 @@ const Projects = ({}:Props) => {
     className='h-screen relative flex flex-col justify-evenly text-left items-center max-w-full md:flex-row overflow-hidden
     mx-auto z-0'>
       <h3 className='absolute top-24 tracking-[20px] uppercase text-gray-500 text-2xl'>Projects</h3>
-      <div className='relative w-full flex overflow-x-scroll overflow-hidden snap-x snap-mandatory z-20'>
+      <div className='relative w-full flex overflow-x-scroll overflow-hidden snap-x snap-mandatory z-20
+      scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
         {projects.map((prj,i)=>{
-            return(<div className='w-screen flex flex-col flex-shrink-0 space-y-5 snap-center justify-center items-center p-20 h-screen'> 
+            return(<div className='w-screen flex flex-col flex-shrink-0 space-y-5 snap-center justify-center items-center p-20 h-screen' key={i}> 
                  <motion.div
                  initial={{
                     y:-300,
@@ -29,22 +33,39 @@ const Projects = ({}:Props) => {
                  }}
                  transition={{duration:1.2}}
                  viewport={{once:true}}
-                 className='h-[200px] w-[400px]'>
+                 className='relative h-[100px] w-[200px] md:h-[200px] md:w-[400px]'>
                     <Image
-                    src={prjimg}
+                    src={urlForImage(prj?.image.asset).url()}
                     alt='projectImage'
-                    className='h-[200px] w-[400px]'/>
+                    fill={true}
+                    />
                  </motion.div>
 
-                 <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-                    <h3 className='text-4xl font-semibold text-center'>
-                        <span className='underline decoration-[#F7AB0A]/50'>Case study {i+1} of {projects.length}:</span>Latest News App
+                 <div className='space-y-4 md:space-y-6 px-0 md:px-10 max-w-6xl overflow-y-scroll max-h-80'>
+                    <h3 className='text-2xl md:text-4xl font-semibold text-center'>
+                        <span className='underline decoration-[#F7AB0A]/50'>Case study {i+1} of {projects.length}:</span>{prj.title}
                     </h3>
-                    <p className='text-lg text-center md:text-left'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quos soluta nobis pariatur magni, impedit magnam. 
-                        A, architecto vero. Vitae quod et sit modi officia animi odit dolores corporis cum dolore quidem sequi eum, omnis 
-                        ea ratione nostrum assumenda earum? Laudantium adipisci, reiciendis delectus totam, voluptatibus suscipit asperiores, 
-                        ipsam tempore cumque ab esse nam temporibus. Odio optio recusandae adipisci quae, molestiae aut qui fuga illo! Quam 
-                        sapiente voluptates numquam exercitationem facilis totam? Minima nemo animi, unde ea sequi modi tempora.</p>
+                    <div className='flex flex-col md:flex-row md:space-x-8 space-y-2 md:space-y-0 justify-center'>
+                      <div className='flex justify-center space-x-4'>
+                        {prj.technologies.map((tech)=>{
+                          return(
+                            <Image
+                            src={urlForImage(tech?.image.asset).url()}
+                            alt='skills'
+                            width={100} height={100}
+                            className='w-6 h-6  object-cover md:w-8 md:h-8'
+                            key={tech._id}
+                            />
+                          )
+                        })}
+                      </div>
+                      <div className='flex justify-center'>
+                      <Link href={prj.linkToBuild} target='_blank'>
+                        <button className='heroButton border border-[#F7AB0A] text-gray-300'>Github code</button>
+                      </Link>
+                      </div>
+                    </div>
+                    <p className='text-base md:text-lg text-center md:text-left'>{prj.summary}</p>
                  </div>
             </div>)
             
@@ -56,3 +77,4 @@ const Projects = ({}:Props) => {
 }
 
 export default Projects
+
