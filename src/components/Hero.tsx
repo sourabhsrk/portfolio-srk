@@ -26,7 +26,7 @@ const Hero = ({pageInfo}: Props) => {
         <h2 className='text-sm uppercase text-gray-500 pb-6 tracking-[15px]'>
            {pageInfo?.role}
         </h2>
-        <h1 className='text-5xl lg:text-6xl px-10 font-semibold'>
+        <h1 className='text-4xl md:text-5xl lg:text-6xl px-10 font-semibold'>
             <span className='mr-3'>
                 <Typewriter 
                     words={[`Hi,I am ${pageInfo?.name}`,'I am web Developer','<Loves to Code/>',"<Designing Tomorrow's Web/>"]}

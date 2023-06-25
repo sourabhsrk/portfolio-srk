@@ -24,7 +24,7 @@ const Projects = ({projects}:Props) => {
             return(<div className='w-screen flex flex-col flex-shrink-0 space-y-5 snap-center justify-center items-center p-20 h-screen' key={i}> 
                  <motion.div
                  initial={{
-                    y:-300,
+                    y:-100,
                     opacity:0
                  }}
                  whileInView={{

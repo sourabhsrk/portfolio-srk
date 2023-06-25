@@ -13,7 +13,7 @@ const ImgSkill = ({directionLeft,skill}: Props) => {
   return (
     <motion.div
     initial={{
-        x: directionLeft ? -200 : 200,
+        x: directionLeft ? -100 : 100,
         opacity : 0
     }}
     transition={{duration:1}}
@@ -26,7 +26,7 @@ const ImgSkill = ({directionLeft,skill}: Props) => {
         src={skill.image?urlForImage(skill.image.asset).url():''}
         alt='icon'
         width={200} height={200}
-        className='h-16 w-16 h- md:h-24 md:w-24 rounded-full border border-gray-500 object-contain xl:h-30 xl:w-30 filter group-hover:grayscale
+        className='h-16 w-16 md:h-24 md:w-24 rounded-full border border-gray-500 object-contain xl:h-30 xl:w-30 filter group-hover:grayscale
         transition duration-300 ease-in-out'/>
        
         <div className='flex justify-center items-center absolute h-16 w-16 md:h-24 md:w-24 xl:h-30 xl:w-30 opacity-0 group-hover:opacity-80 

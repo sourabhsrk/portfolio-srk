@@ -56,7 +56,7 @@ const Home = ({}:Props) => {
     </section>
 
     
-    <footer className='sticky bottom-5 w-full cursor-pointer flex items-center justify-center'>
+    <footer className='sticky bottom-10 md:bottom-5 w-full cursor-pointer flex items-center justify-center'>
       <a href='#hero'>
         <div className='relative h-10 w-10'>
           <Image
