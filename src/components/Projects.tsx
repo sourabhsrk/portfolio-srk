@@ -17,11 +17,11 @@ const Projects = ({projects}:Props) => {
     transition={{duration:1.5}}
     className='h-screen relative flex flex-col justify-evenly text-left items-center max-w-full md:flex-row overflow-hidden
     mx-auto z-0'>
-      <h3 className='absolute top-24 tracking-[20px] uppercase text-gray-500 text-2xl'>Projects</h3>
+      <h3 className='absolute top-16 md:top-20 tracking-[15px] md:tracking-[20px] uppercase text-gray-500 text-2xl'>Projects</h3>
       <div className='relative w-full flex overflow-x-scroll overflow-hidden snap-x snap-mandatory z-20
-      scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+      scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
         {projects.map((prj,i)=>{
-            return(<div className='w-screen flex flex-col flex-shrink-0 space-y-5 snap-center justify-center items-center p-20 h-screen' key={i}> 
+            return(<div className='w-screen flex flex-col flex-shrink-0 space-y-5 snap-center justify-center items-center md:p-20 p-8 h-screen' key={i}> 
                  <motion.div
                  initial={{
                     y:-100,
@@ -33,7 +33,7 @@ const Projects = ({projects}:Props) => {
                  }}
                  transition={{duration:1.2}}
                  viewport={{once:true}}
-                 className='relative h-[100px] w-[200px] md:h-[200px] md:w-[400px]'>
+                 className='relative h-[90px] w-[180px] md:h-[200px] md:w-[400px]'>
                     <Image
                     src={prj.image?urlForImage(prj.image.asset).url():''}
                     alt='projectImage'
@@ -41,7 +41,7 @@ const Projects = ({projects}:Props) => {
                     />
                  </motion.div>
 
-                 <div className='space-y-4 md:space-y-6 px-0 md:px-10 max-w-6xl overflow-y-scroll max-h-80 scrollbar-thin scrollbar-track-[rgb(36,36,36)] scrollbar-thumb-[#F7AB0A]/80'>
+                 <div className='space-y-4 md:space-y-6 px-0 md:px-10 max-w-6xl overflow-y-scroll max-h-72  scrollbar-thin scrollbar-track-[rgb(36,36,36)] scrollbar-thumb-[#F7AB0A]/80'>
                     <h3 className='text-2xl md:text-4xl font-semibold text-center'>
                         <span className='underline decoration-[#F7AB0A]/50'>Case study {i+1} of {projects.length}:</span>{prj.title}
                     </h3>

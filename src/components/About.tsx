@@ -23,8 +23,8 @@ const About = ({pageInfo}: Props) => {
     }}
     
     className='relative flex flex-col h-screen text-center md:text-left md:flex-row 
-    max-w-7xl px-10 justify-center mx-auto items-center space-y-10'>
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
+    max-w-7xl md:px-10 px-4 justify-center mx-auto items-center md:space-y-10 space-y-5'>
+      <h3 className='absolute top-16 md:top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
       <motion.div
         initial={{
             x: -200,
@@ -40,12 +40,12 @@ const About = ({pageInfo}: Props) => {
         viewport={{
             once: true
         }}
-        className='h-52 w-52 md:h-[400px] md:w-[500px] xl:w-[700px] xl:h-[500px]'
+        className='h-48 w-48 md:h-[400px] md:w-[500px] xl:w-[700px] xl:h-[500px]'
         >
         <Image
             src={pageInfo.profilePic?urlForImage(pageInfo.profilePic.asset).url():''}
             alt='profile'
-            className=' -mb-20 md:mb-0 flex-shrink-0 h-52 w-52 rounded-full object-cover md:rounded-lg md:h-[400px] md:w-[500px] xl:w-[700px] xl:h-[500px]'
+            className=' flex-shrink-0 h-48 w-48 rounded-full object-cover md:rounded-lg md:h-[400px] md:w-[500px] xl:w-[700px] xl:h-[500px]'
             width={1000} height={1000}
         />
       </motion.div>
