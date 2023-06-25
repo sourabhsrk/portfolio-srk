@@ -41,7 +41,7 @@ const Projects = ({projects}:Props) => {
                     />
                  </motion.div>
 
-                 <div className='space-y-4 md:space-y-6 px-0 md:px-10 max-w-6xl overflow-y-scroll max-h-80'>
+                 <div className='space-y-4 md:space-y-6 px-0 md:px-10 max-w-6xl overflow-y-scroll max-h-80 scrollbar-thin scrollbar-track-[rgb(36,36,36)] scrollbar-thumb-[#F7AB0A]/80'>
                     <h3 className='text-2xl md:text-4xl font-semibold text-center'>
                         <span className='underline decoration-[#F7AB0A]/50'>Case study {i+1} of {projects.length}:</span>{prj.title}
                     </h3>

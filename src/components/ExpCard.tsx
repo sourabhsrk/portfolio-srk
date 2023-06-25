@@ -32,7 +32,7 @@ const ExpCard = ({experience}: Props) => {
             width={100} height={100}
             className='w-32 h-32 rounded-full object-contain object-center xl:w-[150px] xl:h-[150px]'/>
         </motion.div>
-        <div className='px-0 md:px-10 overflow-y-scroll md:overflow-auto scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80'>
+        <div className='px-0 md:px-10 overflow-y-scroll md:overflow-auto scrollbar-thin scrollbar-track-[rgb(36,36,36)] scrollbar-thumb-[#F7AB0A]/80'>
             <h4 className='text-3xl font-light'>{experience.jobTitle}</h4>
             <p className='font-bold text-xl mt-1'>{experience.company}</p>
             <div className='flex space-x-2 my-2 justify-center md:justify-start'>

@@ -1,3 +1,4 @@
+'use client'
 import { Social } from "../../typings";
 
 export const fetchSocials = async() => {

@@ -1,3 +1,4 @@
+'use client'
 import { Project } from "../../typings";
 
 export const fetchProjects = async() => {

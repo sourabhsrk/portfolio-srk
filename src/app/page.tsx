@@ -1,3 +1,4 @@
+'use client'
 import { use } from 'react';
 import About from '@/components/About'
 import ContactMe from '@/components/ContactMe'
