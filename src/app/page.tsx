@@ -1,4 +1,4 @@
-'use client'
+
 import { use } from 'react';
 import About from '@/components/About'
 import ContactMe from '@/components/ContactMe'
@@ -20,12 +20,12 @@ import { fetchProjects } from '@/utils/fetchProjects'
 type Props = {};
 
 const Home = ({}:Props) => {
- 
-  const pageInfo: PageInfo = use( fetchPageInfo());
-  const experiences: Experience[] = use(fetchExperience());
-  const skills: Skill[] = use(fetchSkills());
-  const socials: Social[] = use(fetchSocials());
-  const projects: Project[] = use(fetchProjects());
+  const isServer = typeof window === 'undefined';
+  const pageInfo: PageInfo = isServer? {} as PageInfo :use( fetchPageInfo());
+  const experiences: Experience[] = isServer? []:use(fetchExperience());
+  const skills: Skill[] = isServer? []:use(fetchSkills());
+  const socials: Social[] = isServer? []:use(fetchSocials());
+  const projects: Project[] = isServer? []:use(fetchProjects());
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0
     scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
@@ -56,16 +56,18 @@ const Home = ({}:Props) => {
       <ContactMe/>
     </section>
 
-    <a href='#hero'>
-      <footer className='sticky bottom-5 w-full cursor-pointer flex items-center justify-center'>
+    
+    <footer className='sticky bottom-5 w-full cursor-pointer flex items-center justify-center'>
+      <a href='#hero'>
         <div className='relative h-10 w-10'>
           <Image
           src={pic}
           alt='gotop'
           className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0'/>
         </div>
-      </footer>
-    </a>
+      </a>
+    </footer>
+    
 
     </div>
   )

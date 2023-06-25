@@ -36,3 +36,5 @@ next-env.d.ts
 
 /src/Images/Logos
 .vercel
+
+/dist

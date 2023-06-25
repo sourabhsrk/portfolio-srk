@@ -35,7 +35,7 @@ const Projects = ({projects}:Props) => {
                  viewport={{once:true}}
                  className='relative h-[100px] w-[200px] md:h-[200px] md:w-[400px]'>
                     <Image
-                    src={urlForImage(prj?.image.asset).url()}
+                    src={prj.image?urlForImage(prj.image.asset).url():''}
                     alt='projectImage'
                     fill={true}
                     />
@@ -50,7 +50,7 @@ const Projects = ({projects}:Props) => {
                         {prj.technologies.map((tech)=>{
                           return(
                             <Image
-                            src={urlForImage(tech?.image.asset).url()}
+                            src={tech.image?urlForImage(tech.image.asset).url():''}
                             alt='skills'
                             width={100} height={100}
                             className='w-6 h-6  object-cover md:w-8 md:h-8'

@@ -23,7 +23,7 @@ const ImgSkill = ({directionLeft,skill}: Props) => {
     }}
     className='group relative flex cursor-pointer h-16 w-16 md:h-24 md:w-24 xl:h-30 xl:w-30'>
       <Image 
-        src={urlForImage(skill.image.asset).url()}
+        src={skill.image?urlForImage(skill.image.asset).url():''}
         alt='icon'
         width={200} height={200}
         className='h-16 w-16 h- md:h-24 md:w-24 rounded-full border border-gray-500 object-contain xl:h-30 xl:w-30 filter group-hover:grayscale

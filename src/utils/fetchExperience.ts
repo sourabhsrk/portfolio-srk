@@ -1,4 +1,3 @@
-'use client'
 import { Experience } from "../../typings";
 
 export const fetchExperience = async() => {

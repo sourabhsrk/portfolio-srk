@@ -39,7 +39,7 @@ const ExpCard = ({experience}: Props) => {
                 {experience.technologies.map((tech)=>{
                     return(
                         <Image
-                        src={urlForImage(tech?.image.asset).url()}
+                        src={tech.image?urlForImage(tech.image.asset).url():''}
                         alt='skills'
                         width={100} height={100}
                         className='w-8 h-8  object-cover'

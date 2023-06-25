@@ -1,4 +1,3 @@
-'use client'
 import { PageInfo } from "../../typings";
 
 export const fetchPageInfo = async() => {

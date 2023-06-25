@@ -43,7 +43,7 @@ const About = ({pageInfo}: Props) => {
         className='h-52 w-52 md:h-95 md:w-70 xl:w-[700px] xl:h-[500px]'
         >
         <Image
-            src={urlForImage(pageInfo?.profilePic.asset).url()}
+            src={pageInfo.profilePic?urlForImage(pageInfo.profilePic.asset).url():''}
             alt='profile'
             className=' -mb-20 md:mb-0 flex-shrink-0 h-52 w-52 rounded-full object-cover md:rounded-lg md:h-95 md:w-70 xl:w-[700px] xl:h-[500px]'
             width={1000} height={1000}
