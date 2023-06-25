@@ -17,7 +17,7 @@ const Projects = ({projects}:Props) => {
     transition={{duration:1.5}}
     className='h-screen relative flex flex-col justify-evenly text-left items-center max-w-full md:flex-row overflow-hidden
     mx-auto z-0'>
-      <h3 className='absolute top-16 md:top-20 tracking-[15px] md:tracking-[20px] uppercase text-gray-500 text-2xl'>Projects</h3>
+      <h3 className='absolute top-20 tracking-[15px] md:tracking-[20px] uppercase text-gray-500 text-2xl'>Projects</h3>
       <div className='relative w-full flex overflow-x-scroll overflow-hidden snap-x snap-mandatory z-20
       scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
         {projects.map((prj,i)=>{
@@ -33,7 +33,7 @@ const Projects = ({projects}:Props) => {
                  }}
                  transition={{duration:1.2}}
                  viewport={{once:true}}
-                 className='relative h-[90px] w-[180px] md:h-[200px] md:w-[400px]'>
+                 className='relative h-[100px] w-[200px] md:h-[200px] md:w-[400px]'>
                     <Image
                     src={prj.image?urlForImage(prj.image.asset).url():''}
                     alt='projectImage'

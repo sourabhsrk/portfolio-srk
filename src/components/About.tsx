@@ -24,7 +24,7 @@ const About = ({pageInfo}: Props) => {
     
     className='relative flex flex-col h-screen text-center md:text-left md:flex-row 
     max-w-7xl md:px-10 px-4 justify-center mx-auto items-center md:space-y-10 space-y-5'>
-      <h3 className='absolute top-16 md:top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
+      <h3 className='absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
       <motion.div
         initial={{
             x: -200,
