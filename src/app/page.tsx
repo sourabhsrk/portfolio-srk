@@ -20,7 +20,7 @@ import { fetchProjects } from '@/utils/fetchProjects'
 type Props = {};
 
 const Home = ({}:Props) => {
-  const pageInfo: PageInfo = use( fetchPageInfo());
+  const pageInfo: PageInfo =  use( fetchPageInfo());
   const experiences: Experience[] = use(fetchExperience());
   const skills: Skill[] = use(fetchSkills());
   const socials: Social[] = use(fetchSocials());
@@ -73,5 +73,6 @@ const Home = ({}:Props) => {
 }
 
 export default Home;
+
 
 
