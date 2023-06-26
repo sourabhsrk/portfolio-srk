@@ -12,7 +12,7 @@ type Props = {
 const ExpCard = ({experience}: Props) => {
   return (
     <article className='flex flex-col rounded-lg items-center space-y-4 w-[350px] md:w-[500px] xl:w-[700px] flex-shrink-0
-    snap-center p-4 bg-[#292929] opacity-40 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+    snap-center p-4 bg-[#292929] opacity-100 md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden'>
         <motion.div
         initial={{
             y: -100,
