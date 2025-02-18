@@ -1,4 +1,4 @@
-import { Experience } from "../../typings";
+import { ExperienceCardType } from "../../typings";
 import { groq } from "next-sanity";
 import {client} from '../../sanity/lib/client';
 
@@ -8,7 +8,7 @@ export const fetchExperience = async() => {
         technologies[]->
       } `
 
-    const experiences: Experience[] = await client.fetch(query,{
+    const experiences: ExperienceCardType[] = await client.fetch(query,{
         next: { revalidate: 30 },
     });
   //  const data = await res.json();
