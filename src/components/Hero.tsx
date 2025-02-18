@@ -16,20 +16,20 @@ const Hero = ({pageInfo}: Props) => {
   return (
     <div className='h-screen flex flex-col space-y-8 justify-center items-center text-center overflow-hidden'>
        <BackgroundCircles/>
-       <Image className='relative rounded-full h-32 w-32 mx-auto object-cover' 
+       <Image className='relative rounded-full h-24 w-24 md:h-32 md:w-32 mx-auto object-cover' 
        src={pageInfo.heroImage?urlForImage(pageInfo.heroImage.asset).url():''} 
        alt='profile pic' 
        width={100} 
        height={100}
        priority={true}/> 
        <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-6 tracking-[15px]'>
+        <h2 className='text-sm uppercase text-gray-500 pb-6 tracking-[8px] md:tracking-[15px]'>
            {pageInfo?.role}
         </h2>
-        <h1 className='text-4xl md:text-5xl lg:text-6xl px-10 font-semibold'>
+        <h1 className='h-12 md:h-auto text-3xl md:text-5xl lg:text-6xl px-4 md:px-10 font-semibold'>
             <span className='mr-3'>
                 <Typewriter 
-                    words={[`Hi,I am ${pageInfo?.name}`,'I am web Developer','<Loves to Code/>',"<Designing Tomorrow's Web/>"]}
+                    words={[`Hi,I am ${pageInfo?.name}`,'I am a web Developer','<Loves to Code/>',"<Designing Tomorrow's Web/>"]}
                     loop={true}
                     cursor
                     cursorStyle='|'
