@@ -9,7 +9,7 @@ import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
 import Image from 'next/image'
 import pic from '../Images/gojo.jpg'
-import { Skill, Social, Project, Experience, PageInfo } from '../../typings'
+import { Skill, Social, Project, ExperienceCardType, PageInfo } from '../../typings'
 import { fetchPageInfo } from '@/utils/fetchPageInfo'
 import { fetchExperience } from '@/utils/fetchExperience'
 import { fetchSkills } from '@/utils/fetchSkills'
@@ -21,7 +21,7 @@ type Props = {};
 
 const Home = ({}:Props) => {
   const pageInfo: PageInfo =  use( fetchPageInfo());
-  const experiences: Experience[] = use(fetchExperience());
+  const experiences: ExperienceCardType[] = use(fetchExperience());
   const skills: Skill[] = use(fetchSkills());
   const socials: Social[] = use(fetchSocials());
   const projects: Project[] = use(fetchProjects());

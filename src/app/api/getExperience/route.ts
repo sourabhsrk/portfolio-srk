@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { groq } from "next-sanity";
-import { Experience  } from "../../../../typings";
+import { ExperienceCardType  } from "../../../../typings";
 import { client } from '../../../../sanity/lib/client'
 
 const query = groq ` *[_type == "experience"]{
@@ -9,7 +9,7 @@ const query = groq ` *[_type == "experience"]{
   } `
 
 export async function GET(){
-    const experiences: Experience[] =  await client.fetch(query);
+    const experiences: ExperienceCardType[] =  await client.fetch(query);
 
     return NextResponse.json({experiences})
 }
