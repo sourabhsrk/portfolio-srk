@@ -48,7 +48,7 @@ export interface Project extends SanityBody {
     technologies: Skill[]
 }
 
-export interface Experience extends SanityBody {
+export interface ExperienceCardType extends SanityBody {
     _type: "experience",
     company: string,
     companyImage: Image,
