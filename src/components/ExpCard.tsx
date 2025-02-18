@@ -2,12 +2,12 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from "framer-motion"
-import { Experience } from '../../typings'
+import { ExperienceCardType } from '../../typings'
 import { urlForImage } from '../../sanity/lib/image'
 
 
 type Props = {
-    experience: Experience
+    experience: ExperienceCardType
 }
 const ExpCard = ({experience}: Props) => {
   return (
@@ -15,7 +15,7 @@ const ExpCard = ({experience}: Props) => {
     snap-center p-4 bg-[#292929] opacity-100 md:opacity-50 md:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden'>
         <motion.div
         initial={{
-            y: -100,
+            y: -90,
             opacity: 0
         }}
         transition={{duration:1.2}}
@@ -24,13 +24,13 @@ const ExpCard = ({experience}: Props) => {
             opacity: 1
         }}
         viewport={{once: true}}
-        className=' w-32 h-32  w-xl:w-[150px] xl:h-[150px] '
+        className='relative w-20 h-16 xl:w-[120px] xl:h-[120px] '
         >
             <Image 
             src={urlForImage(experience?.companyImage.asset).url()} 
             alt='profile'
-            width={100} height={100}
-            className='w-32 h-32 rounded-full object-contain object-center xl:w-[150px] xl:h-[150px]'/>
+            fill
+            className='absolute object-cover'/>
         </motion.div>
         <div className='px-0 md:px-10 overflow-y-scroll md:overflow-auto scrollbar-thin scrollbar-track-[rgb(36,36,36)] scrollbar-thumb-[#F7AB0A]/80'>
             <h4 className='text-3xl font-light'>{experience.jobTitle}</h4>
@@ -60,7 +60,7 @@ const ExpCard = ({experience}: Props) => {
                  })
                 }
             </p>
-            <ul className='list-disc space-y-2 md:space-y-4 ml-5 text-base h-52 md:h-60'>
+            <ul className='list-disc space-y-2 md:space-y-4 ml-5 text-base text-left h-[35vh]'>
                 {experience.points.map((point,i)=>{
                     return(
                         <li key={i}>{point}</li>
