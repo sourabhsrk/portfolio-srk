@@ -52,7 +52,7 @@ const ExpCard = ({ experience }: Props) => {
                 year: "numeric",
               })}
         </p>
-        <ul className="list-disc space-y-2 md:space-y-4 ml-5 text-base text-left h-[35vh]">
+        <ul className="list-disc space-y-2 md:space-y-4 ml-5 text-base text-left">
           {experience.points.map((point, i) => {
             return <li key={i}>{point}</li>;
           })}
